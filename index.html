@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sơ đồ tư duy Toán 12</title>
+  <style>
+    body { margin: 0; padding: 0; height: 100vh; overflow: hidden; }
+    .markmap { width: 100%; height: 100%; }
+  </style>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+  <div class="markmap">
+	# Đường tiệm cận của đồ thị hàm số
+	## 1. Tiệm cận ngang (TCN)
+	- Ý nghĩa hình học: Thể hiện xu hướng ổn định của hàm số khi biến $x$ tiến ra vô tận.
+	- Định nghĩa bằng giới hạn:
+    - Nếu $\lim_{x \to +\infty} f(x) = y_0$ hoặc $\lim_{x \to -\infty} f(x) = y_0$
+    - $\Rightarrow$ Đường thẳng $y = y_0$ là đường tiệm cận ngang.
+	- Đặc điểm: Một đồ thị hàm số có tối đa 2 đường tiệm cận ngang.
+	## 2. Tiệm cận đứng (TCĐ)
+	- Ý nghĩa hình học: Thể hiện sự "bùng nổ" (tiến ra vô cực) của hàm số tại một điểm kỳ dị (thường là nghiệm của mẫu số).
+	- Định nghĩa bằng giới hạn:
+    - Nếu $\lim_{x \to x_0^+} f(x) = \pm\infty$ hoặc $\lim_{x \to x_0^-} f(x) = \pm\infty$
+    - $\Rightarrow$ Đường thẳng $x = x_0$ là đường tiệm cận đứng.
+	- Mẹo xét hàm phân thức: Điểm $x_0$ phải là nghiệm của mẫu số nhưng **KHÔNG** là nghiệm của tử số (hoặc nếu là nghiệm của tử thì bậc của nghiệm ở mẫu phải lớn hơn).
+	## 3. Tiệm cận xiên (TCX) - Trọng tâm chương trình mới
+	- Ý nghĩa hình học: Đồ thị hàm số tiến sát đến một đường thẳng xiên góc khi $x$ ra vô tận.
+	- Định nghĩa:
+    - Nếu $\lim_{x \to +\infty} [f(x) - (ax + b)] = 0$ hoặc $\lim_{x \to -\infty} [f(x) - (ax + b)] = 0$ (với $a \neq 0$)
+    - $\Rightarrow$ Đường thẳng $y = ax + b$ là đường tiệm cận xiên.
+	- Phương pháp tìm cho hàm $y = \frac{P(x)}{Q(x)}$ (Bậc tử = Bậc mẫu + 1):
+    - Bước 1: Thực hiện phép chia đa thức tử $P(x)$ cho mẫu $Q(x)$.
+    - Bước 2: Viết lại hàm số dưới dạng $y = (ax + b) + \frac{R(x)}{Q(x)}$.
+    - Bước 3: Phần thương $y = ax + b$ chính là phương trình đường TCX.
+	## 4. Các dạng hàm số cốt lõi thường thi
+	- Hàm phân thức bậc 1 / bậc 1: $y = \frac{ax + b}{cx + d}$ ($c \neq 0, ad - bc \neq 0$)
+    - TCN: $y = \frac{a}{c}$ (Tỉ lệ hệ số của $x$)
+    - TCĐ: $x = -\frac{d}{c}$ (Nghiệm của mẫu số)
+    - Không có tiệm cận xiên.
+	- Hàm phân thức bậc 2 / bậc 1: $y = \frac{ax^2 + bx + c}{mx + n}$ ($a \neq 0, m \neq 0$)
+    - TCĐ: $x = -\frac{n}{m}$ (Nghiệm của mẫu số)
+    - TCX: Chia tử cho mẫu lấy phần thương.
+    - Không có tiệm cận ngang.
+	## 5. Kỹ năng giải bài thi trắc nghiệm (Tư duy thực chiến)
+	- Đọc bảng biến thiên:
+    - Tìm TCN: Nhìn vào giới hạn tại vị trí $x = -\infty$ và $x = +\infty$. Nếu $y$ ra một hằng số, đó là TCN.
+    - Tìm TCĐ: Nhìn vào vị trí $x$ có dấu hai gạch $||$. Nếu giới hạn một bên của $y$ tại đó là $\pm\infty$, đó là TCĐ.
+	- Dùng máy tính cầm tay (CASIO/VINACAL):
+    - Tính $\lim_{x \to +\infty}$ bằng cách CALC với $x = 10^9$.
+    - Tính $\lim_{x \to x_0^+}$ bằng cách CALC với $x = x_0 + 10^{-6}$.
+  </div>
+</body>
+</html>
